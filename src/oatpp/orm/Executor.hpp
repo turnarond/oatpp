@@ -100,6 +100,10 @@ public:
                                                const std::shared_ptr<const data::mapping::TypeResolver>& typeResolver = nullptr,
                                                const provider::ResourceHandle<Connection>& connection = nullptr) = 0;
 
+
+  virtual std::shared_ptr<QueryResult> exec(const oatpp::String& statement,
+                                         const provider::ResourceHandle<orm::Connection>& connection = nullptr) = 0;
+
   /**
    * Execute an arbitrary database query. <br>
    * In its default implementation it'll call execute with the null-named query template.
